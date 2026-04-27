@@ -1,0 +1,198 @@
+/* ============================================================
+   LEMON BOSS — Colors & Type
+   Tokens for the Lemon Boss brand system.
+   Import this file anywhere you need the brand vocabulary.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   FONTS
+   The logotype is custom hand-drawn. For display + UI we use:
+     Display  → Sora (heavy rounded geometric) — nearest Google
+                Fonts match to the chunky logotype. **Substitution.**
+     UI       → Inter (neutral clean UI sans) for long-form &
+                professional / legal copy so the serious side of
+                the firm reads clearly next to the playful logo.
+     Mono     → JetBrains Mono for code / numeric / tabular.
+   ------------------------------------------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+
+:root {
+  /* ------------- CORE PALETTE ------------- */
+  /* Lemon — the hero color. Pulled directly off the logo. */
+  --lemon-50:  #FFFCE5;
+  --lemon-100: #FFF6B3;
+  --lemon-200: #FFEE7A;
+  --lemon-300: #FFE44D;
+  --lemon-400: #FFDA1F;   /* mid lemon — highlights, glow */
+  --lemon-500: #FFE600;   /* BRAND YELLOW — primary */
+  --lemon-600: #E6CE00;
+  --lemon-700: #B8A400;
+  --lemon-800: #8A7B00;
+  --lemon-900: #5C5200;
+
+  /* Ink — the chunky outline black. Slightly warm, not pure #000. */
+  --ink-50:  #F5F5F3;
+  --ink-100: #E8E8E4;
+  --ink-200: #C9C9C2;
+  --ink-300: #9A9A92;
+  --ink-400: #6C6C65;
+  --ink-500: #3F3F3A;
+  --ink-600: #262622;
+  --ink-700: #171715;
+  --ink-800: #0D0D0C;
+  --ink-900: #000000;     /* true black used in logo outline */
+
+  /* Peel — warm cream for surfaces, glow halos, paper feel. */
+  --peel-50:  #FFFDF5;
+  --peel-100: #FFF9E3;
+  --peel-200: #FFF2C2;    /* the halo glow in the logo */
+  --peel-300: #F6E7A0;
+
+  /* Leaf — fresh supporting green (tied to citrus leaf). */
+  --leaf-400: #62C16E;
+  --leaf-500: #2FA542;
+  --leaf-600: #1E8A31;
+
+  /* Pulp — soft coral accent for attention / "hot take" moments. */
+  --pulp-400: #FF8A65;
+  --pulp-500: #FF6B3D;
+
+  /* Sky — rare cool accent (reflected lens gleam). */
+  --sky-400: #6BC7F5;
+  --sky-500: #2FA8E8;
+
+  /* ------------- SEMANTIC COLORS ------------- */
+  /* Foreground */
+  --fg-1: var(--ink-900);         /* primary text / outlines */
+  --fg-2: var(--ink-600);         /* strong body */
+  --fg-3: var(--ink-400);         /* secondary body / meta */
+  --fg-4: var(--ink-300);         /* tertiary / hints */
+  --fg-inverse: var(--peel-50);   /* text on dark */
+  --fg-on-lemon: var(--ink-900);  /* always black on yellow */
+
+  /* Background */
+  --bg-app: var(--peel-50);       /* app cream background */
+  --bg-surface: #FFFFFF;          /* cards */
+  --bg-sunken: var(--peel-100);   /* muted panel */
+  --bg-inverse: var(--ink-900);   /* dark surfaces */
+  --bg-brand: var(--lemon-500);   /* brand-flooded surface */
+  --bg-halo: var(--peel-200);     /* soft halo behind stickers */
+
+  /* Strokes — the signature. We lean on heavy borders, not shadows. */
+  --stroke-hairline: var(--ink-200);
+  --stroke-ui: var(--ink-900);
+  --stroke-brand: var(--ink-900);
+
+  /* Status */
+  --success: var(--leaf-500);
+  --success-bg: #E6F5E8;
+  --warning: var(--lemon-600);
+  --warning-bg: var(--lemon-100);
+  --danger:  #E53935;
+  --danger-bg: #FCE8E8;
+  --info:   var(--sky-500);
+  --info-bg: #E6F4FC;
+
+  /* ------------- TYPOGRAPHY FAMILIES ------------- */
+  --font-display: 'Sora', 'Nunito', system-ui, -apple-system, sans-serif;
+  --font-ui:      'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* ------------- TYPE SCALE ------------- */
+  /* Display uses tight line-height + 800 weight. */
+  --t-display-1: 800 72px/0.95 var(--font-display);
+  --t-display-2: 800 56px/1.00 var(--font-display);
+  --t-h1:        800 40px/1.05 var(--font-display);
+  --t-h2:        700 32px/1.10 var(--font-display);
+  --t-h3:        700 24px/1.20 var(--font-display);
+  --t-h4:        700 20px/1.25 var(--font-display);
+  --t-eyebrow:   800 13px/1.00 var(--font-ui);   /* ALL CAPS, tracked */
+  --t-lead:      500 20px/1.45 var(--font-ui);
+  --t-body:      400 16px/1.55 var(--font-ui);
+  --t-body-sm:   400 14px/1.50 var(--font-ui);
+  --t-meta:      500 12px/1.40 var(--font-ui);
+  --t-mono:      400 13px/1.50 var(--font-mono);
+
+  /* Letter-spacing helpers */
+  --track-tight: -0.02em;
+  --track-normal: 0;
+  --track-loose: 0.08em;
+  --track-caps:  0.12em;
+
+  /* ------------- RADII ------------- */
+  --r-xs:  4px;
+  --r-sm:  8px;
+  --r-md:  12px;
+  --r-lg:  18px;
+  --r-xl:  28px;     /* card / sticker corner */
+  --r-pill: 999px;
+
+  /* ------------- SPACING ------------- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+  --sp-9: 96px;
+
+  /* ------------- BORDERS ------------- */
+  /* The brand IS the thick border. Always prefer border + offset
+     shadow over soft drop shadow. */
+  --border-ui:    2px solid var(--ink-900);
+  --border-chunk: 3px solid var(--ink-900);
+  --border-hero:  4px solid var(--ink-900);
+
+  /* ------------- SHADOWS ------------- */
+  /* Offset-solid "sticker shadow" — never blurred, always ink. */
+  --shadow-pop-sm: 3px 3px 0 var(--ink-900);
+  --shadow-pop-md: 5px 5px 0 var(--ink-900);
+  --shadow-pop-lg: 8px 8px 0 var(--ink-900);
+  /* Soft halo — used ONLY for the brand glow behind logos. */
+  --shadow-halo:   0 0 0 10px var(--peel-200);
+  /* Subtle ambient shadow for legal/long-form content cards where the
+     sticker-pop shadow would feel too loud. */
+  --shadow-ambient: 0 1px 2px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.06);
+
+  /* ------------- TRANSITIONS ------------- */
+  --ease-out-snappy: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-squish:     cubic-bezier(0.34, 1.56, 0.64, 1);  /* slight overshoot */
+  --dur-xs: 120ms;
+  --dur-sm: 180ms;
+  --dur-md: 240ms;
+  --dur-lg: 360ms;
+}
+
+/* ------------------------------------------------------------
+   SEMANTIC TYPE (apply directly to elements)
+   ------------------------------------------------------------ */
+html { font-family: var(--font-ui); color: var(--fg-1); background: var(--bg-app); }
+body { font: var(--t-body); color: var(--fg-2); }
+
+.t-display-1 { font: var(--t-display-1); letter-spacing: var(--track-tight); color: var(--fg-1); }
+.t-display-2 { font: var(--t-display-2); letter-spacing: var(--track-tight); color: var(--fg-1); }
+.t-h1        { font: var(--t-h1); letter-spacing: var(--track-tight); color: var(--fg-1); }
+.t-h2        { font: var(--t-h2); letter-spacing: var(--track-tight); color: var(--fg-1); }
+.t-h3        { font: var(--t-h3); color: var(--fg-1); }
+.t-h4        { font: var(--t-h4); color: var(--fg-1); }
+.t-eyebrow   { font: var(--t-eyebrow); letter-spacing: var(--track-caps); text-transform: uppercase; color: var(--fg-2); }
+.t-lead      { font: var(--t-lead); color: var(--fg-2); }
+.t-body      { font: var(--t-body); color: var(--fg-2); }
+.t-body-sm   { font: var(--t-body-sm); color: var(--fg-2); }
+.t-meta      { font: var(--t-meta); color: var(--fg-3); }
+.t-mono      { font: var(--t-mono); color: var(--fg-2); }
+
+/* ------------------------------------------------------------
+   UTILITY: "sticker" — the signature container treatment.
+   Heavy black border + flat offset shadow. No blur.
+   ------------------------------------------------------------ */
+.sticker {
+  background: var(--bg-surface);
+  border: var(--border-chunk);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow-pop-md);
+}
+.sticker--lemon { background: var(--lemon-500); color: var(--fg-on-lemon); }
+.sticker--ink   { background: var(--ink-900); color: var(--fg-inverse); }
