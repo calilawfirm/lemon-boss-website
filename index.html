@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lemon Boss — California Lemon Law</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Lemon Boss handles California lemon law claims start to finish. $0 out of pocket — manufacturer pays our fees under the Song-Beverly Act.">
+<link rel="stylesheet" href="styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="src/primitives.jsx"></script>
+<script type="text/babel" src="src/chrome.jsx"></script>
+<script type="text/babel" src="src/home.jsx"></script>
+<script type="text/babel" src="src/pages.jsx"></script>
+<script type="text/babel" src="src/faq_signin.jsx"></script>
+<script type="text/babel" src="src/estimator.jsx"></script>
+<script type="text/babel">
+function App() {
+  const [route, setRoute] = React.useState(() => {
+    const h = window.location.hash.replace('#', '');
+    return h || 'home';
+  });
+  React.useEffect(() => {
+    const onHash = () => setRoute(window.location.hash.replace('#', '') || 'home');
+    window.addEventListener('hashchange', onHash);
+    return () => window.removeEventListener('hashchange', onHash);
+  }, []);
+  const go = (r) => {
+    window.location.hash = r;
+    setRoute(r);
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  };
+  const onEstimator = () => go('estimator');
+
+  let Page;
+  switch (route) {
+    case 'how':       Page = <HowItWorksPage go={go} onEstimator={onEstimator} />; break;
+    case 'qualify':   Page = <QualifyPage go={go} onEstimator={onEstimator} />; break;
+    case 'results':   Page = <ResultsPage go={go} onEstimator={onEstimator} />; break;
+    case 'faq':       Page = <FAQPage onEstimator={onEstimator} />; break;
+    case 'signin':    Page = <SignInPage go={go} />; break;
+    case 'estimator': Page = <EstimatorPage go={go} />; break;
+    case 'about':     Page = <AboutPage go={go} onEstimator={onEstimator} />; break;
+    case 'attorneys': Page = <AttorneysPage go={go} onEstimator={onEstimator} />; break;
+    case 'contact':   Page = <ContactPage go={go} />; break;
+    case 'privacy':   Page = <PrivacyPage />; break;
+    case 'terms':     Page = <TermsPage />; break;
+    case 'disclaimer':Page = <DisclaimerPage />; break;
+    default:          Page = <HomePage go={go} onEstimator={onEstimator} />;
+  }
+  return (
+    <div>
+      <Nav route={route} go={go} onEstimator={onEstimator} />
+      {Page}
+      <Footer go={go} />
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>
