@@ -53,12 +53,35 @@ a { color: inherit; }
   .grid-4 { grid-template-columns: 1fr 1fr; }
   .grid-3 { grid-template-columns: 1fr; }
   .grid-2 { grid-template-columns: 1fr; gap: 40px; }
-  .container { padding: 0 20px; }
+  .container { padding: 0 16px; }
+  .container-narrow { padding: 0 16px; }
   .hide-mobile { display: none !important; }
   .section-pad { padding: 56px 0 !important; }
-  .hero-title { font-size: 56px !important; line-height: .95 !important; }
-  .h2-title { font-size: 34px !important; }
+  .hero-title { font-size: 48px !important; line-height: .95 !important; }
+  .h2-title { font-size: 30px !important; }
+
+  /* Attorney card stacks on mobile */
+  .attorney-card { grid-template-columns: 1fr !important; }
+
+  /* Contact form stacks on mobile */
+  .contact-grid { grid-template-columns: 1fr !important; }
+
+  /* Footer stacks on mobile */
+  .footer-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+
+  /* Fix oversized section padding on mobile */
+  section { padding-left: 0 !important; padding-right: 0 !important; }
 }
+
+@media (max-width: 600px) {
+  .grid-4 { grid-template-columns: 1fr; }
+  .hero-title { font-size: 38px !important; }
+  .h2-title { font-size: 26px !important; }
+
+  /* Input grids (email+phone) stack on small phones */
+  .input-row { grid-template-columns: 1fr !important; }
+}
+
 @media (min-width: 901px) {
   .hide-desktop { display: none !important; }
 }

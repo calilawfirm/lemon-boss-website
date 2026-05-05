@@ -60,7 +60,7 @@ function Nav({ route, go, onEstimator }) {
 function Footer({ go }) {
   return (
     <footer style={{ background: '#000', color: '#fff', padding: '56px 0 28px' }}>
-      <div className="container" style={{ display: 'grid', gridTemplateColumns: '1.6fr 1fr 1fr 1fr', gap: 40 }}>
+      <div className="container footer-grid" style={{ display: 'grid', gridTemplateColumns: '1.6fr 1fr 1fr 1fr', gap: 40 }}>
         <div>
           <div style={{ display: 'inline-block', background: '#FFFDF5', border: '3px solid #000', borderRadius: 18, padding: '8px 14px', boxShadow: '5px 5px 0 #FFE600' }}>
             <img src="assets/logo-lemon-boss.png" style={{ height: 44, display: 'block' }} />

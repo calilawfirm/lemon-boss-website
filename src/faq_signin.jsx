@@ -314,7 +314,7 @@ function ContactPage({ go }) {
       </section>
 
       <section style={{ background: '#FFFDF5', padding: '72px 0' }}>
-        <div className="container" style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 48, alignItems: 'start' }}>
+        <div className="container contact-grid" style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 48, alignItems: 'start' }}>
           <div style={{ background: '#fff', border: '3px solid #000', borderRadius: 28, boxShadow: '8px 8px 0 #000', padding: 32 }}>
             {sent ? (
               <div style={{ textAlign: 'center', padding: '20px 10px' }} className="squish-in">
